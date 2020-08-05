@@ -1,0 +1,69 @@
+actions:
+- utter_cheer_up
+- utter_default
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_happy_or_sad
+- utter_iamabot
+- action_restart
+- action_intro
+intents:
+- bot_challenge
+- mood_great
+- greet
+- goodbye
+- affirm
+- deny
+- mood_unhappy
+- restart:
+    triggers: action_restart
+responses:
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_default:
+  - text: I don't quite understand.
+  utter_did_that_help:
+  - text: Did that help you?
+    buttons:
+      - title: "Yes"
+        payload: "/affirm"
+      - title: "No"
+        payload: "/deny"
+  utter_goodbye:
+  - text: Bye
+    buttons:
+      - title: "Restart Conversation"
+        payload: "/restart"
+  utter_greet:
+  - text: Hey! How are you?
+  utter_happy:
+  - text: Great, carry on!
+    buttons:
+      - title: "Goodbye"
+        payload: "/goodbye"
+  utter_happy_or_sad:
+  - text: Are you happy or sad today?
+    buttons:
+      - title: "Happy"
+        payload: "/mood_great"
+      - title: "Sad"
+        payload: "/mood_unhappy"
+  utter_happy_or_sad_or_bot:
+  - text: Are you happy or sad today?
+    buttons:
+      - title: "Happy"
+        payload: "/mood_great"
+      - title: "Sad"
+        payload: "/mood_unhappy"
+      - title: "Are you a bot?"
+        payload: "/bot_challenge"
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_restart:
+  - text: RESTART
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
