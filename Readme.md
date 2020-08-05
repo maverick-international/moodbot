@@ -5,3 +5,5 @@ To start:
 - Run Rasa Shell: rasa shell
 - Run Action Server: rasa run actions
 - Chat with MoodBot
+
+![alt text](https://github.com/maverick-international/moodbot/blob/master/flowchart.png?raw=true)
